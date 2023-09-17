@@ -4,12 +4,12 @@
 # - The third element should be a list containing the maximum temperatures
 #   of the last three days.
 
-my_list = ???
+my_list = []
 
 # Now, fill in the print statements to display the following information:
-print(???) # - The city name
-print(???) # - The state or province
-print(???) # - The list of temperatures
-
+print(my_list.append("NYC")) # - The city name
+print(my_list.append("NY")) # - The state or province
+print(my_list.append([36, 46, 56])) # - The list of temperatures
+print(my_list)
 # Bonus
-print(???) # - The first temperature of the list of temperatures.
+print(my_list[2]) # - The first temperature of the list of temperatures.

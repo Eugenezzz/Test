@@ -9,3 +9,14 @@
 # For anything less than 60, display 'You've got an F!'"
 
 grade = int(input("Enter student grade: "))
+
+if grade >= 90:
+    print("You’ve got an A!")
+elif grade >= 80:
+    print("You’ve got a B!")
+elif grade >= 70:
+    print("You’ve got a C!")
+if grade >= 60:
+    print("You’ve got a D!")
+else:
+    print("You’ve got an F!")

@@ -14,3 +14,6 @@
 #   - If someone has some other symptoms, use an 'else' statement to print 'Get some rest!'
 # - If someone is not sick:
 #   - Use an 'else' statement to print the message 'Work is waiting for you!'
+
+is_sick = True
+sickness = 'fever'

@@ -19,3 +19,4 @@ letter = input("Enter the letter to count: ")
 # Expected output:
 # I love REPLACED and dogs, but REPLACED are my favorite.
 # 3
+

@@ -6,3 +6,10 @@
 # 5 => -5
 # -1 => -1
 
+number = 20
+
+if number >= 5:
+    print(int(number * -1))
+else:
+    print(number)
+

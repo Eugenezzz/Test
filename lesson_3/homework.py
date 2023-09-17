@@ -1,4 +1,4 @@
-# Homework Lesson 2 - Strings
+# Homework Lesson 3 - Strings
 
 # READ CAREFULLY THE EXERCISE DESCRIPTION AND SOLVE IT RIGHT AFTER IT
 
@@ -9,8 +9,9 @@
 #
 # Example Input: "Alice"
 # Example Output: "Hello, Alice!"
-name = input("Enter yor name: ")
-print(f"????")
+
+# name = input("Enter your name: ")
+# print(f"Hello, {name}")
 
 # ---------------------------------------------------------------------
 # Exercise 2: Greeting with User's Favorite Activity
@@ -24,6 +25,9 @@ print(f"????")
 # Favorite Activity: hiking
 # Example Output: "Hello, Emily! Enjoy hiking!"
 
+name = input('Enter your name: ')
+activity = input('Enter your activity: ')
+print(f'Hello, {name}! Enjoy {activity}!')
 
 # ---------------------------------------------------------------------
 # Exercise 3: Membership Cards
@@ -38,6 +42,9 @@ print(f"????")
 # Name: Emily
 # Example Output: "Welcome, Emily! Your name in uppercase is: EMILY!"
 
+name = input('Enter your name: ')
+upper_case_name = name.upper()
+print(f'Welcome, {name}! Your name in uppercase is: {upper_case_name}!')
 
 # ---------------------------------------------------------------------
 # Exercise 4: User Profile Creation
@@ -54,6 +61,16 @@ print(f"????")
 # Name: John Smith
 # Age: 28
 
+title_first_name = input('Enter your first name: ').title()
+title_last_name = input('Enter your last name: ').title()
+age = input('Enter your age: ')
+print(f"Name: {title_first_name} {title_last_name} \n Age: {age}")
+
+upper_first_name = input('Enter your first name: ').upper()
+upper_last_name = input('Enter your last name: ').upper()
+age = input('Enter your age: ')
+print(f"Name: {upper_first_name} {upper_last_name} \n Age: {age}")
+
 
 # ---------------------------------------------------------------------
 # Exercise 5: Text message limits
@@ -65,6 +82,15 @@ print(f"????")
 # an f-string. This character count will help users ensure their
 # messages fit within the allowed limit.
 
+user_message_input = input('Message limit: 20 characters \n' + 'Message: ')
+characters_count = user_message_input.count('')
+characters_limit = 20
+
+if characters_count <= characters_limit:
+    print(f'Message contains: {characters_count} characters')
+else:
+    print(f"The message contains: {characters_count} characters, when the limit is {characters_limit}, \n"
+          f"please abbreviate the message so that it contains no more than {characters_limit} characters")
 
 # ---------------------------------------------------------------------
 # Exercise 6: Text Transformation Game
@@ -74,9 +100,17 @@ print(f"????")
 #
 # Example Input: "Hello, world!"
 # Example Output: "H*ll*, w*rld!"
-sentence = input("Enter a sentence: ")
-transformed_sentence = sentence.replace('a', '*')
+# sentence = input("Enter a sentence: ")
+# transformed_sentence = sentence.replace('a', '*')
 
+sentence = input("Enter a sentence: ")
+transformed_sentence = (sentence
+                        .replace('a', '*')
+                        .replace('e', '*')
+                        .replace('i', '*')
+                        .replace('o', '*')
+                        .replace('u', '*'))
+print(transformed_sentence)
 
 # ------------------------------# ---------------------------------------------------------------------
 # Exercise 7: Extracting Information
@@ -90,6 +124,9 @@ transformed_sentence = sentence.replace('a', '*')
 # Name: Lucy Smith
 # Age: 28
 
+data = "lucy smith:28"
+formatted_data = f'Name: {data[0:10]} \n Age: {data[11:]}'
+print(formatted_data.title())
 
 # ---------------------------------------------------------------------
 # Exercise 8: Miles to Kilometers Conversion
@@ -102,10 +139,13 @@ transformed_sentence = sentence.replace('a', '*')
 # Example Output: 10 miles is approximately 16.0 kilometers.
 
 # We are converting the input string to float:
+
 # Input: float("1.23")
 # Output: 1.23
-miles = float(input("Enter distance in miles: "))
 
+miles = float(input("Enter distance in miles: "))
+kilometers = round(miles * 1.6, 1)
+print(f'{miles} miles is approximately {kilometers} kilometers.')
 
 # ---------------------------------------------------------------------
 # Exercise 9: Workouts calculator
@@ -119,13 +159,29 @@ miles = float(input("Enter distance in miles: "))
 # to stay consistent and reach their fitness goals. Display the
 # motivational message to the user.
 
+cardio_time = int(input(f'Enter your cardio training time in minutes: '))
+strength_time = int(input(f'Enter your strength training time in minutes: '))
+yoga_time = int(input(f'Enter your yoga time in minutes: '))
+total_activities_time = cardio_time + strength_time + yoga_time
+time_goal = 90
+
+print(f'Your total activities time: {total_activities_time} minutes')
+
+if total_activities_time < 90:
+    print(f'Great, your {total_activities_time} minute training is going well, '
+          f'and you need to speed up a bit to reach your {time_goal} minute goal!')
+else:
+    print(f'Great, your {total_activities_time} minutes of training is going great and at the right pace, '
+          f'your goal of {time_goal} minutes of training has been reached!')
 
 # ---------------------------------------------------------------------
 # Challenge 1 (OPTIONAL!): Reverse the negative integer -324 and keep
 # the negative symbol. Expected output: -423
+
 input_number = -324
 
 # Convert the integer to a string to handle the negative symbol separately
+
 num_str = str(input_number)
 
 # Reverse the digits (excluding the negative symbol) using slicing [::-1]
@@ -134,11 +190,16 @@ num_str = str(input_number)
 
 # (ADD YOUR CODE BELOW)
 
+reversed_str = num_str[:0:-1]
+
 # Add the negative symbol back to the reversed string
+
 reversed_num = int(num_str[0] + reversed_str)
 
 # Output the result
 # (ADD YOUR CODE BELOW)
+
+print(reversed_num)
 
 # ---------------------------------------------------------------------
 # Challenge 2 (OPTIONAL!): Formatting Average Speed
@@ -176,7 +237,8 @@ hours = int(input("Enter the total number of hours: "))
 average_speed = miles / hours
 
 # Formatting and displaying the result
-# (Your code here)
-rounded_speed = ????
+print(f"The average speed is {average_speed} miles per hour")
 
-print(f"The average speed is {rounded_speed} miles per hour")
+rounded_speed = round(average_speed, 1)
+#
+print(f"The average rounded speed is {rounded_speed} miles per hour")

@@ -16,3 +16,11 @@
 # discount, print 'Sorry, you are not eligible for any discount.'
 
 # Remember to use the and, or, and not operators to combine conditions as needed.
+
+age = 23
+income = 123
+
+if age >= 18 and income <= 1000:
+    print('You qualify for the discount!')
+elif age < 18 or income == 0:
+    print('You get a special discount!')
